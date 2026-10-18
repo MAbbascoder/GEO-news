@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo News Layout - Fixed Clone</title>
+    
+    <!-- Bootstrap 5 RTL CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Urdu Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+            color: #222;
+        }
+
+        /* Top Navigation Styling */
+        .top-nav {
+            background-color: #ffffff;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .nav-links a:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .badge-orange { background-color: #fd7e14; color: white; }
+        .badge-red { background-color: #dc3545; color: white; }
+        .badge-blue { background-color: #0d6efd; color: white; }
+
+        /* General Section Boxes */
+        .section-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Left Side: Columnists / Authors Section Styling */
+        .columnist-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 12px 15px;
+        }
+        .columnist-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .columnist-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .columnist-img {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            flex-shrink: 0;
+            margin-left: 12px; /* RTL spacing */
+        }
+        .columnist-content {
+            text-align: right;
+            flex-grow: 1;
+        }
+        .columnist-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #111;
+            line-height: 1.4;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .columnist-title:hover {
+            color: #0d6efd;
+        }
+        .columnist-name {
+            font-size: 13px;
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .columnist-name:hover {
+            text-decoration: underline;
+        }
+
+        /* News Cards Styling */
+        .news-card img {
+            border-radius: 4px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .news-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111;
+            text-decoration: none;
+            line-height: 1.4;
+        }
+        .news-title:hover {
+            color: #0d6efd;
+        }
+
+        /* Top Banner Ad Box */
+        .banner-card {
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            background: #ffffff;
+        }
+        .ad-tag {
+            font-size: 11px;
+            color: #0d6efd;
+            border: 1px solid #0d6efd;
+            padding: 1px 5px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="top-nav shadow-sm py-2">
+        <div class="container text-center">
+            <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
+                <h3 class="fw-bold m-0 text-dark">جیو نیوز</h3>
+                <img src="./image/logo.jfif" alt="Geo News Logo" style="height: 35px; width: auto;" onerror="this.style.display='none'">
+            </div>
+            
+            <nav class="nav-links d-flex flex-wrap justify-content-center align-items-center gap-1">
+                <a href="#" class="btn badge-blue btn-sm text-white">جیو انگلش</a>
+                <a href="#">کاروبار</a>
+                <a href="#">انٹرٹینمنٹ</a>
+                <a href="#">دنیا</a>
+                <a href="#">کھیل</a>
+                <a href="#">پاکستان</a>
+                <a href="#">فیکٹ چیک</a>
+                <a href="#" class="text-danger fw-bold">امریکہ، ایران جنگ</a>
+                <a href="#">تازہ ترین</a>
+                <a href="#" class="btn badge-orange btn-sm text-white">صفحہ اول</a>
+                <a href="#" class="btn badge-red btn-sm text-white">لائیو ٹی وی</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <!-- Top Ad Banner -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-12">
+                <div class="banner-card p-3">
+                    <span class="ad-tag mb-2"><i class="fa-solid fa-info-circle"></i> Ad</span>
+                    <div class="row g-3 align-items-center flex-row-reverse">
+                        <div class="col-md-7">
+                            <img src="./image/040d29aa-5162-432a-ac52-250b7aa2d4f3.jfif" alt="Athens Helicopter Hire" class="img-fluid rounded w-100 object-fit-cover" style="max-height: 220px;" onerror="this.src='https://via.placeholder.com/700x220?text=Advertisement'">
+                        </div>
+                        <div class="col-md-5">
+                            <h4 class="fw-bold text-dark mb-2">Athens Helicopter Hire</h4>
+                            <p class="text-muted small mb-3">
+                                Book your helicopter transfer with Superior Air — 
+                                <span class="text-primary fw-semibold">luxury, safety, and speed</span> guaranteed.
+                            </p>
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-dark small">Superior Air</span>
+                                <a href="#" class="text-primary fw-bold text-decoration-none small">Open <i class="fa-solid fa-chevron-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main News Layout Grid (3 Columns) -->
+        <div class="row g-3">
+            
+            <!-- COLUMN 1 (LEFT): Kラム نگار / Authors (تصویر والے کالم نگاروں کا سیکشن) -->
+            <div class="col-lg-3 col-md-4">
+                <div class="columnist-box shadow-sm">
+                    
+                    <!-- Item 1 -->
+                    <div class="columnist-item">
+                        <img src="./image/123.jpg" alt="طارق معین صدیقی" class="columnist-img" onerror="this.src='https://via.placeholder.com/50'">
+                        <div class="columnist-content">
+                            <a href="#" class="columnist-title">معاشی اثرات، خودکشیاں اور معاشرتی زوال پذیری</a>
+                            <a href="#" class="columnist-name">طارق معین صدیقی</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="columnist-item">
+                        <img src="./image/234.jpg" alt="مظہر عباس" class="columnist-img" onerror="this.src='https://via.placeholder.com/50'">
+                        <div class="columnist-content">
+                            <a href="#" class="columnist-title">'اکتوبر' اچھی خبر نہیں لاتا</a>
+                            <a href="#" class="columnist-name">مظہر عباس</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="columnist-item">
+                        <img src="https://via.placeholder.com/50" alt="سلیم صافی" class="columnist-img">
+                        <div class="columnist-content">
+                            <a href="#" class="columnist-title">گورنر راج کے بعد</a>
+                            <a href="#" class="columnist-name">سلیم صافی</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="columnist-item">
+                        <img src="https://via.placeholder.com/50" alt="انصار عباسی" class="columnist-img">
+                        <div class="columnist-content">
+                            <a href="#" class="columnist-title">ایچ کے نے کون سا بدلہ لیا؟</a>
+                            <a href="#" class="columnist-name">انصار عباسی</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="columnist-item">
+                        <img src="https://via.placeholder.com/50" alt="حامد میر" class="columnist-img">
+                        <div class="columnist-content">
+                            <a href="#" class="columnist-title">قیدی حکومت</a>
+                            <a href="#" class="columnist-name">حامد میر</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="columnist-item">
+                        <img src="https://via.placeholder.com/50" alt="انصار عباسی" class="columnist-img">
+                        <div class="columnist-content">
+                            <a href="#" class="columnist-title">سہیل آفریدی کی چھٹی؟</a>
+                            <a href="#" class="columnist-name">انصار عباسی</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- COLUMN 2 (MIDDLE): درمیانی خبریں (2 Middle Sub-Grid Boxes) -->
+            <div class="col-lg-4 col-md-4">
+                <div class="section-box h-100">
+                    <div class="news-card mb-4">
+                        <img src="./image/inter.png" alt="News Image" class="mb-2" style="height: 170px;">
+                        <a href="#" class="news-title">'شیطان مر گیا'، تنوشری کے تبصرے پر نانا پاٹیکر کے بیٹے کا ردعمل سامنے آگیا</a>
+                    </div>
+                    
+                    <div class="news-card mb-4">
+                        <img src="./image/qatal.png"News Image class="mb-2" style="height: 170px;">
+                        <a href="#" class="news-title">زیبا ویڈیو کا معاملہ: گلشن حدید سے اغوا نوجوان قتل، کزن قاتل نکلا</a>
+                    </div>
+
+                    <div class="news-card">
+                        <img src="./image/atta.jfif" alt="News Image" class="mb-2" style="height: 170px;" onerror="this.src='https://via.placeholder.com/400x200'">
+                        <a href="#" class="news-title">خیبرپختونخوا: خستہ حال اسکولوں میں تدریسی عمل فوری روکنے کا حکم</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 3 (RIGHT): مرکزی بڑی بریکنگ نیوز (Main Highlighted News) -->
+            <div class="col-lg-5 col-md-4">
+                <div class="section-box h-100">
+                    <div class="news-card">
+                        <img src="./image/dc1876c4-c176-47bb-bd99-52b191220472.jfif" alt="Main Breaking News" style="height: 250px;" onerror="this.src='https://via.placeholder.com/500x250'">
+                        <h3 class="mt-3">
+                            <a href="#" class="news-title fs-4">حکومت پی ٹی آئی سے غیر مشروط مذاکرات پر آمادہ، ایمرجنسی واپس لینے کی شرط پر مذاکرات نہیں ہوسکتے: رانا ثناءاللہ</a>
+                        </h3>
+                        <p class="text-muted small mt-2">
+                            پی ٹی آئی نے پہلے مذاکرات کو موقع ہی نہیں دیا، ایمرجنسی کے تحت قائم سیٹ اپ کو مناسب وقت دیا جائے گا: مشیر وزیراعظم
+                        </p>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="news-card">
+                        <h5 class="fw-bold">
+                            <a href="#" class="news-title fs-6">سرحد پار سے ہونیوالی ڈرون اندازی کو کسی صورت برداشت نہیں کیا جائیگا: کمانڈر نیشنل اسٹریٹجک کمانڈ</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
